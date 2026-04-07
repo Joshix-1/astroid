@@ -2864,7 +2864,12 @@ class ClassDef(
             pass
         return None
 
-    def _compute_mro(self, context: InferenceContext, *, _base_chain: frozenset[ClassDef] = frozenset()):
+    def _compute_mro(
+        self,
+        context: InferenceContext,
+        *,
+        _base_chain: frozenset[ClassDef] = frozenset(),
+    ):
         if self.qname() == "builtins.object":
             return [self]
 
